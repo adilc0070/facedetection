@@ -134,7 +134,7 @@ export default function ProfileEditor({ user }) {
         ) : null}
       </div>
       {message ? <p className="mt-3 text-sm text-[var(--ink-soft)]">{message}</p> : null}
-      <button className="btn btn-primary mt-5 w-full" disabled={saving}>
+      <button type="submit" className="btn btn-primary mt-5 w-full" disabled={saving}>
         {saving ? "Saving…" : "Save profile"}
       </button>
     </form>

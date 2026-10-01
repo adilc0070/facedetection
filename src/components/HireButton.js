@@ -52,7 +52,7 @@ export default function HireButton({ creatorId, creatorName, rate }) {
 
   return (
     <>
-      <button className="btn btn-primary w-full" onClick={() => setOpen(true)}>
+      <button type="button" className="btn btn-primary w-full" onClick={() => setOpen(true)}>
         Hire {creatorName.split(" ")[0]}
       </button>
       {open ? (
@@ -100,7 +100,11 @@ export default function HireButton({ creatorId, creatorName, rate }) {
               <button type="button" className="btn btn-ghost flex-1" onClick={() => setOpen(false)}>
                 Cancel
               </button>
-              <button type="submit" className="btn btn-accent flex-1" disabled={loading}>
+              <button
+              type="submit"
+              className="btn btn-accent flex-1"
+              disabled={loading}
+            >
                 {loading ? "Creating…" : "Continue to pay"}
               </button>
             </div>

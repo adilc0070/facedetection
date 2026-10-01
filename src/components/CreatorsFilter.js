@@ -45,7 +45,7 @@ export default function CreatorsFilter({ initialQ, initialSkill }) {
           </option>
         ))}
       </select>
-      <button className="btn btn-primary" onClick={() => apply()}>
+      <button type="button" className="btn btn-primary" onClick={() => apply()}>
         Search
       </button>
     </div>

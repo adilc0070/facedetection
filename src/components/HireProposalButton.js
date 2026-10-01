@@ -21,7 +21,7 @@ export default function HireProposalButton({ proposalId }) {
   }
 
   return (
-    <button className="btn btn-accent !py-2 !px-4 text-sm" onClick={hire} disabled={loading}>
+    <button type="button" className="btn btn-accent !py-2 !px-4 text-sm" onClick={hire} disabled={loading}>
       {loading ? "Hiring…" : "Hire & pay Lumina"}
     </button>
   );

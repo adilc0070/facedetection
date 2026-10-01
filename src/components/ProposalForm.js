@@ -75,7 +75,7 @@ export default function ProposalForm({ jobId }) {
         </div>
       </div>
       {error ? <p className="text-sm text-[var(--danger)]">{error}</p> : null}
-      <button className="btn btn-primary" disabled={loading}>
+      <button type="submit" className="btn btn-primary" disabled={loading}>
         {loading ? "Submitting…" : "Submit proposal"}
       </button>
     </form>

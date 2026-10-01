@@ -55,7 +55,7 @@ function LoginForm() {
         />
       </div>
       {error ? <p className="text-sm text-[var(--danger)]">{error}</p> : null}
-      <button className="btn btn-primary w-full" disabled={loading}>
+      <button type="submit" className="btn btn-primary w-full" disabled={loading}>
         {loading ? "Signing in…" : "Sign in"}
       </button>
       <p className="text-center text-sm text-[var(--ink-soft)]">

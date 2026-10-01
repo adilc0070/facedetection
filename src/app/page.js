@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 async function getHomeData() {
   await connectDB();
   await ensureSeeded();
-  const [creators, jobs, creatorCount] = await Promise.all([
+  const [creators, jobs] = await Promise.all([
     User.find({ role: "creator", featured: true })
       .select("-passwordHash")
       .sort({ rating: -1 })
@@ -24,13 +24,12 @@ async function getHomeData() {
       .sort({ createdAt: -1 })
       .limit(3)
       .lean(),
-    User.countDocuments({ role: "creator" }),
   ]);
-  return { creators, jobs, creatorCount };
+  return { creators, jobs };
 }
 
 export default async function HomePage() {
-  const { creators, jobs, creatorCount } = await getHomeData();
+  const { creators, jobs } = await getHomeData();
 
   return (
     <>
@@ -71,8 +70,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/55">
-            Built for {creatorCount}+ creators rising from our AI Creation & Creative courses —
-            joining a community of 3,500+ students.
+            From a community of 3,500+ AI Creation & Creative Course students — ready for real freelance work.
           </p>
         </div>
       </section>

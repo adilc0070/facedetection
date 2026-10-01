@@ -136,7 +136,7 @@ export default function NewJobForm() {
         />
       </div>
       {error ? <p className="text-sm text-[var(--danger)]">{error}</p> : null}
-      <button className="btn btn-primary" disabled={loading}>
+      <button type="submit" className="btn btn-primary" disabled={loading}>
         {loading ? "Publishing…" : "Publish job"}
       </button>
     </form>
