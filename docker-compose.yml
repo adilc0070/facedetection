@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: lumina-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - lumina_mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  lumina_mongo_data:
